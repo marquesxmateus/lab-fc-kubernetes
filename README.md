@@ -20,6 +20,12 @@ kubectl config get-clusters
 kubectl get nodes 
 # switch context
 kubectl config use-context cluster-name
+# apply 
+kubectl apply -f k8s/pod.yaml 
+# get pods 
+kubectl get po   
+# access container 
+kubectl port-forward pod/goserver 8081:8081
 ```
 
 ## Docker commands 
