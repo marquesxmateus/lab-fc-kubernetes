@@ -28,6 +28,13 @@ kubectl get po
 kubectl port-forward pod/goserver 8081:8081
 # delete pod 
 kubectl delete pod goserver
+# history 
+kubectl rollout history deployment goserver
+# rollback to last version 
+kubectl rollout undo deployment goserver 
+kubectl rollout undo deployment goserver --to-revision=2
+# describe
+kubectl describe pod goserver-5bf6c594b9-5hl25
 ```
 
 ## Docker commands 

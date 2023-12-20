@@ -13,5 +13,5 @@ func main() {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("<h1>Hello World!</h1>"))
+	w.Write([]byte("<h1>Hello World! V2</h1>"))
 }
