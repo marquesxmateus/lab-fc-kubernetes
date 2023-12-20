@@ -26,6 +26,8 @@ kubectl apply -f k8s/pod.yaml
 kubectl get po   
 # access container 
 kubectl port-forward pod/goserver 8081:8081
+# delete pod 
+kubectl delete pod goserver
 ```
 
 ## Docker commands 
