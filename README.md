@@ -1,5 +1,10 @@
 # Kubernetes 
 
+As informações de sobre os cluster ficam no kubeconfig. ex: 
+```
+\\wsl.localhost\Ubuntu\home\mateus\.kube
+```
+
 ## Kind K8S
 ```bash
 # create cluster 
