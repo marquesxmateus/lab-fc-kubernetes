@@ -14,6 +14,20 @@ kubectl cluster-info --context kind-kubelearn
 ```
 ## Kubernetes commands
 ```bash
+# list cluster 
+kubectl config get-clusters
+# get node from context
 kubectl get nodes 
+# switch context
+kubectl config use-context cluster-name
 ```
 
+## Docker commands 
+```bash
+# create image
+docker build -t marquesxmateus/hello-go .
+# run 
+docker run --rm -p 8081:8081 marquesxmateus/hello-go
+# push 
+docker push marquesxmateus/hello-go
+```
