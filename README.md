@@ -26,6 +26,8 @@ kubectl apply -f k8s/pod.yaml
 kubectl get po   
 # access container 
 kubectl port-forward pod/goserver 8081:8081
+# access service 
+kubectl port-forward svc/goserver-service 8081:8081
 # delete pod 
 kubectl delete pod goserver
 # history 
@@ -35,6 +37,8 @@ kubectl rollout undo deployment goserver
 kubectl rollout undo deployment goserver --to-revision=2
 # describe
 kubectl describe pod goserver-5bf6c594b9-5hl25
+# get services
+kubectl get svc
 ```
 
 ## Docker commands 
