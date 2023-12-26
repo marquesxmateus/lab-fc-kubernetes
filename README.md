@@ -43,6 +43,10 @@ kubectl get svc
 kubectl delete svc goserver-service
 # acesso a api do kubernetes
 kubectl proxy --por=8081  
+# acessar dentro do pod 
+kubectl exec -it goserver-68594bd665-cfzl2 -- bash 
+# acessar logs do pod 
+kubectl logs goserver-68594bd665-cfzl2
 ```
 
 ## Docker commands 
