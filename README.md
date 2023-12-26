@@ -39,6 +39,8 @@ kubectl rollout undo deployment goserver --to-revision=2
 kubectl describe pod goserver-5bf6c594b9-5hl25
 # get services
 kubectl get svc
+# delete service
+kubectl delete svc goserver-service
 # acesso a api do kubernetes
 kubectl proxy --por=8081  
 ```
