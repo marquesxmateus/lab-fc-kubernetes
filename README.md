@@ -58,3 +58,8 @@ docker run --rm -p 8081:8081 marquesxmateus/hello-go
 # push 
 docker push marquesxmateus/hello-go
 ```
+
+## Extra 
+```bash
+echo "mateus" | base64
+```
