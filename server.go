@@ -6,13 +6,17 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
+
+var startedAt = time.Now()
 
 func main() {
 	// Create a new server
 	http.HandleFunc("/", Hello)
 	http.HandleFunc("/secret", Secret)
 	http.HandleFunc("/config", ConfigMapExample)
+	http.HandleFunc("/healthz", Healthz)
 	http.ListenAndServe(":8000", nil)
 	fmt.Println("Server is running on port 80")
 }
@@ -38,4 +42,16 @@ func Secret(w http.ResponseWriter, r *http.Request) {
 	user := os.Getenv("USER")
 	password := os.Getenv("PASSWORD")
 	fmt.Fprintf(w, "User: %s, Password: %s", user, password)
+}
+
+func Healthz(w http.ResponseWriter, r *http.Request) {
+	uptime := time.Since(startedAt)
+
+	if uptime.Seconds() < 10 {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(fmt.Sprintf("Error - Uptime: %v", uptime.Seconds())))
+	} else {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(fmt.Sprintf("Success - Uptime: %v", uptime.Seconds())))
+	}
 }

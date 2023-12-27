@@ -48,6 +48,8 @@ kubectl exec -it goserver-68594bd665-cfzl2 -- bash
 # acessar logs do pod 
 kubectl logs goserver-68594bd665-cfzl2
 ```
+### Probes
+livenessProve tem 3 tipos: http, command, tcp 
 
 ## Docker commands 
 ```bash
